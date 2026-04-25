@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AcademiGuard — Adaptive AI for Academic Interventions | SLIIT</title>
+  <meta name="description" content="AcademiGuard: Proactive student monitoring using GRU Autoencoder, Reinforcement Learning, and SHAP Explainable AI. SLIIT Research 2025–2026." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%232563EB'/><text x='16' y='22' text-anchor='middle' font-size='16' font-weight='800' fill='white'>AG</text></svg>">
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#home" class="nav-logo">
+    <div class="logo-icon">AG</div>
+    AcademiGuard
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home" class="nav-link">Home</a></li>
+    <li><a href="#domain" class="nav-link">Domain</a></li>
+    <li><a href="#milestones" class="nav-link">Milestones</a></li>
+    <li><a href="#documents" class="nav-link">Documents</a></li>
+    <li><a href="#presentations" class="nav-link">Slides</a></li>
+    <li><a href="#about" class="nav-link">About Us</a></li>
+    <li><a href="#contact" class="nav-link">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-bg-orb orb1"></div>
+  <div class="hero-bg-orb orb2"></div>
+  <div class="hero-bg-orb orb3"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-badge"><span class="badge-dot"></span>Research Project &nbsp;·&nbsp; SLIIT &nbsp;·&nbsp; 2025–2026</div>
+      <h1 class="hero-title">
+        Adaptive &amp; Explainable AI for<br>
+        <span class="highlight" id="typed-text"></span><span class="cursor">|</span>
+      </h1>
+      <p class="hero-abstract">
+        AcademiGuard is a proactive student monitoring platform that detects early signs of
+        disengagement <em>before</em> academic performance suffers — powered by a GRU Autoencoder,
+        Reinforcement Learning, and SHAP-based Explainable AI for full educator transparency.
+      </p>
+      <div class="hero-meta">
+        <span class="hero-meta-item"><span class="dot"></span>SLIIT · Dept. of Information Technology</span>
+        <span class="hero-meta-item"><span class="dot"></span>Supervisor: Sanjeevi Chandrasiri</span>
+        <span class="hero-meta-item"><span class="dot"></span>Co-Supervisor: Ishara Weerathunga</span>
+      </div>
+      <div class="hero-cta">
+        <a href="#domain" class="btn-primary">Explore Research</a>
+        <a href="#documents" class="btn-outline">View Documents</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-stats-panel">
+        <div class="stats-header">Model Performance</div>
+        <div class="stats-grid">
+          <div class="stat-card"><div class="stat-number" data-target="97.8" data-suffix="%"><span>0%</span></div><div class="stat-label">Ensemble Accuracy</div></div>
+          <div class="stat-card"><div class="stat-number" data-target="99.64" data-suffix="%"><span>0%</span></div><div class="stat-label">ROC-AUC Score</div></div>
+          <div class="stat-card"><div class="stat-number" data-target="75" data-suffix="K+"><span>0K+</span></div><div class="stat-label">LMS Records</div></div>
+          <div class="stat-card"><div class="stat-number" data-target="99.49" data-suffix="%"><span>0%</span></div><div class="stat-label">Cross-Val Mean</div></div>
+        </div>
+        <div class="tech-stack-row">
+          <div class="tech-stack-label">TECHNOLOGY STACK</div>
+          <div class="tech-pills">
+            <span class="tech-pill">React</span>
+            <span class="tech-pill">Firebase</span>
+            <span class="tech-pill">FastAPI</span>
+            <span class="tech-pill">GRU</span>
+            <span class="tech-pill">SHAP/XAI</span>
+            <span class="tech-pill">XGBoost</span>
+            <span class="tech-pill">LightGBM</span>
+            <span class="tech-pill">LLaMA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator"><div class="scroll-line"></div><span>Scroll to explore</span></div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="section-inner">
+    <span class="section-tag">Core Components</span>
+    <h2 class="section-title">Three Pillars of AcademiGuard</h2>
+    <p class="section-sub">An integrated architecture unifying predictive modeling, explainable AI, and adaptive cognitive support.</p>
+    <div class="features-grid">
+      <div class="feature-card blue">
+        <div class="feature-icon-wrap blue-icon">⚡</div>
+        <h3>Hybrid Ensemble Engine</h3>
+        <p>Random Forest + XGBoost + LightGBM (2:2:1 soft-voting) achieves <strong>97.8% accuracy</strong> identifying at-risk students from 17-attribute academic and demographic data.</p>
+        <div class="feature-metric"><span class="metric-val">97.8%</span><span class="metric-lbl">Accuracy</span></div>
+      </div>
+      <div class="feature-card purple">
+        <div class="feature-icon-wrap purple-icon">〰</div>
+        <h3>GRU Anomaly Detector</h3>
+        <p>A GRU Autoencoder monitors 10-week LMS behavioral sequences and flags students exceeding the <strong>97th percentile</strong> reconstruction error as high-risk for disengagement.</p>
+        <div class="feature-metric"><span class="metric-val">p97</span><span class="metric-lbl">Risk Threshold</span></div>
+      </div>
+      <div class="feature-card teal">
+        <div class="feature-icon-wrap teal-icon">🎯</div>
+        <h3>RL Intervention Agent</h3>
+        <p>A Q-learning agent prescribes optimal re-engagement — soft nudges (40.9%), reminders (6.8%), or escalation — while LLaMA delivers personalized, empathetic messaging.</p>
+        <div class="feature-metric"><span class="metric-val">40.9%</span><span class="metric-lbl">Soft Nudge Rate</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOMAIN -->
+<section id="domain">
+  <div class="section-inner">
+    <span class="section-tag">Domain</span>
+    <h2 class="section-title">Research Domain</h2>
+    <p class="section-sub">Bridging Educational Data Mining, Explainable AI, and Reinforcement Learning to build a trustworthy end-to-end academic early-warning ecosystem.</p>
+
+    <div class="domain-tabs">
+      <button class="tab-btn active" onclick="switchTab(this,'lit')">Literature Survey</button>
+      <button class="tab-btn" onclick="switchTab(this,'gap')">Research Gap</button>
+      <button class="tab-btn" onclick="switchTab(this,'prob')">Research Problem</button>
+      <button class="tab-btn" onclick="switchTab(this,'obj')">Objectives</button>
+      <button class="tab-btn" onclick="switchTab(this,'meth')">Methodology</button>
+      <button class="tab-btn" onclick="switchTab(this,'tech')">Technologies</button>
+    </div>
+
+    <div class="tab-content-wrapper">
+
+      <div class="tab-panel active" id="tab-lit">
+        <div class="tab-panel-inner">
+          <div class="tab-panel-icon">📚</div>
+          <div class="tab-panel-body">
+            <h3>Literature Survey</h3>
+            <p>Educational Data Mining (EDM) and Learning Analytics (LA) have emerged as critical research domains. With widespread LMS adoption, behavioral footprints — login frequencies, assessment results, assignment patterns, and session durations — are now accessible at scale and proven to be highly reliable early indicators of academic trajectory.</p>
+            <p>Supervised ML techniques (decision trees, SVMs, random forests, deep neural networks) achieve strong predictive accuracy. However, their "black-box" nature limits classroom adoption — educators are hesitant to act on risk warnings they cannot interpret. SHAP (SHapley Additive exPlanations) has emerged as the leading approach to bridge this gap.</p>
+            <p>Recent work also demonstrates that recommendation engines synthesizing learning behaviors can automatically suggest optimized study strategies, yet no unified platform combines all three capabilities.</p>
+            <div class="lit-refs">
+              <span class="ref-tag">Yağcı (2022)</span>
+              <span class="ref-tag">Siemens &amp; Baker (2012)</span>
+              <span class="ref-tag">Shahiri et al. (2015)</span>
+              <span class="ref-tag">Lundberg &amp; Lee (2017)</span>
+              <span class="ref-tag">Zheng et al. (2023)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-gap">
+        <div class="tab-panel-inner">
+          <div class="tab-panel-icon">🔍</div>
+          <div class="tab-panel-body">
+            <h3>Research Gap</h3>
+            <p>Despite significant progress across individual research domains, a critical gap persists: <strong>the majority of existing systems remain siloed</strong>. They either focus exclusively on risk prediction without explainability, or lack the infrastructure to trigger adaptive personalized interventions automatically.</p>
+            <p>Three specific gaps were identified during our literature review:</p>
+            <ul class="gap-list">
+              <li>Risk prediction systems lack integrated explainability — educators receive alerts but not the reasoning behind them</li>
+              <li>Anomaly detection frameworks operate in isolation, without downstream adaptive intervention logic</li>
+              <li>Intervention systems are static and rule-based, unable to learn from individual student response patterns over time</li>
+            </ul>
+            <p>AcademiGuard directly addresses this gap by synthesizing sequential disengagement detection, SHAP-driven explainability, and adaptive intervention recommendations into a single cohesive platform.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-prob">
+        <div class="tab-panel-inner">
+          <div class="tab-panel-icon">⚠️</div>
+          <div class="tab-panel-body">
+            <h3>Research Problem</h3>
+            <p>Traditional academic monitoring relies on <strong>lagging indicators</strong> — primarily midterm and final grades. Interventions based on these metrics occur too late to meaningfully alter a student's academic trajectory.</p>
+            <p>A student who gradually reduces forum participation, exhibits irregular login patterns, or consistently submits assignments late is often already on a dropout trajectory — long before grades reflect the problem. Universities frequently fail to catch these early warning signs.</p>
+            <div class="problem-statement">
+              <strong>Core Research Question:</strong> How can we detect and respond to student disengagement proactively — using real-time behavioral signals — in a way that is both effective and transparent to educators?
+            </div>
+            <p>This requires bridging early behavioral anomaly detection, prescription of optimal intervention strategies, and human-interpretable reasoning behind every automated recommendation.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-obj">
+        <div class="tab-panel-inner">
+          <div class="tab-panel-icon">🎯</div>
+          <div class="tab-panel-body">
+            <h3>Research Objectives</h3>
+            <div class="objectives-list">
+              <div class="obj-item">
+                <div class="obj-num">01</div>
+                <div class="obj-text"><strong>Scalable Architecture</strong><p>Deploy a full-stack cloud educational monitoring system integrating React, Firebase, and Python microservices via FastAPI.</p></div>
+              </div>
+              <div class="obj-item">
+                <div class="obj-num">02</div>
+                <div class="obj-text"><strong>Ensemble Risk Prediction</strong><p>Build a Hybrid Ensemble (RF + XGBoost + LightGBM, 2:2:1 soft-voting) for baseline cumulative academic risk assessment.</p></div>
+              </div>
+              <div class="obj-item">
+                <div class="obj-num">03</div>
+                <div class="obj-text"><strong>Temporal Anomaly Detection</strong><p>Apply a GRU Autoencoder to detect sequential behavioral anomalies in LMS data before grades reflect academic decline.</p></div>
+              </div>
+              <div class="obj-item">
+                <div class="obj-num">04</div>
+                <div class="obj-text"><strong>Adaptive Interventions</strong><p>Use a Q-learning RL agent to prescribe optimal, escalating re-engagement strategies based on student risk profiles and response history.</p></div>
+              </div>
+              <div class="obj-item">
+                <div class="obj-num">05</div>
+                <div class="obj-text"><strong>Explainable AI</strong><p>Embed SHAP-based XAI to provide per-feature attribution scores, ensuring every risk prediction is interpretable and actionable for educators.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-meth">
+        <div class="tab-panel-inner">
+          <div class="tab-panel-icon">⚙️</div>
+          <div class="tab-panel-body">
+            <h3>Methodology</h3>
+            <p>AcademiGuard operates as a <strong>dual-engine ML framework</strong> with three integrated stages:</p>
+            <div class="meth-steps">
+              <div class="meth-step">
+                <div class="meth-step-num">1</div>
+                <div class="meth-step-body"><strong>Hybrid Ensemble Engine (Baseline Risk)</strong><p>Soft-voting classifier aggregates Random Forest (300 estimators, depth 12), XGBoost (lr=0.05, scale_pos_weight=4), and LightGBM (2:2:1 weights). Trained on 17-attribute UCI dataset with 80:20 stratified split and 5-fold cross-validation. SHAP TreeExplainer surfaces per-feature contributions for every prediction.</p></div>
+              </div>
+              <div class="meth-step">
+                <div class="meth-step-num">2</div>
+                <div class="meth-step-body"><strong>GRU Autoencoder (Continuous Monitoring)</strong><p>Trained on 75,000 weekly LMS records across 5,000 students. Compresses 10-week behavioral sequences via Adam optimizer (MSE loss). Normal patterns are learned; reconstruction error spikes identify anomalous, disengaging students. Students exceeding the 97th percentile threshold trigger the intervention module.</p></div>
+              </div>
+              <div class="meth-step">
+                <div class="meth-step-num">3</div>
+                <div class="meth-step-body"><strong>Q-Learning RL Agent (Intervention)</strong><p>Trained on 25,000 historical interaction samples. State space: risk_level, risk_trend, last_action, no_response_streak, fatigue_level. Selects from DO_NOTHING (52.3%), SOFT_NUDGE (40.9%), and REMINDER (6.8%). LLaMA translates decisions into personalized empathetic natural-language messages.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-tech">
+        <div class="tab-panel-inner">
+          <div class="tab-panel-icon">🛠️</div>
+          <div class="tab-panel-body">
+            <h3>Technologies Used</h3>
+            <div class="tech-categories">
+              <div class="tech-cat"><h4>Frontend</h4><div class="tech-tags"><span>React.js</span><span>Tailwind CSS</span></div></div>
+              <div class="tech-cat"><h4>Backend</h4><div class="tech-tags"><span>Firebase (Auth / Firestore)</span><span>FastAPI (Python)</span><span>RESTful API Gateway</span></div></div>
+              <div class="tech-cat"><h4>Machine Learning</h4><div class="tech-tags"><span>GRU Autoencoder</span><span>Random Forest</span><span>XGBoost</span><span>LightGBM</span><span>Q-Learning (RL)</span><span>MinMaxScaler</span><span>Adam Optimizer</span></div></div>
+              <div class="tech-cat"><h4>Explainability</h4><div class="tech-tags"><span>SHAP TreeExplainer</span><span>Feature Attribution Scores</span></div></div>
+              <div class="tech-cat"><h4>AI / NLP</h4><div class="tech-tags"><span>LLaMA (Cognitive AI)</span><span>Natural Language Generation</span></div></div>
+              <div class="tech-cat"><h4>Data Sources</h4><div class="tech-tags"><span>UCI ML Repository</span><span>University LMS Logs</span><span>Firestore Database</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MILESTONES -->
+<section id="milestones">
+  <div class="section-inner">
+    <span class="section-tag">Milestones</span>
+    <h2 class="section-title">Project Timeline</h2>
+    <p class="section-sub">Key assessments and deliverables throughout the research lifecycle. Use the dropdown below to navigate to a specific milestone.</p>
+
+    <div class="milestone-selector">
+      <label for="milestoneSelect">Jump to Milestone:</label>
+      <select id="milestoneSelect" onchange="jumpToMilestone(this.value)">
+        <option value="">— Select a Milestone —</option>
+        <option value="m1">Project Topic Assessment · May 2024</option>
+        <option value="m2">Project Charter · Jun 2024</option>
+        <option value="m3">Proposal Presentation · 5% · Jul 2024</option>
+        <option value="m4">Proposal Report · 7% · Aug 2024</option>
+        <option value="m5">Check List 1 · 1% · Dec 2024</option>
+        <option value="m6">Progress Presentation 1 · 15% · Dec 2024</option>
+        <option value="m7">Research Paper Draft · 10% · Mar 2025</option>
+        <option value="m8">Progress Presentation 2 · 18% · Mar 2025</option>
+        <option value="m9">Website Assessment · 2% · Jun 2025</option>
+        <option value="m10">Final Report · 19% · Aug 2025</option>
+        <option value="m11">Final Assessment &amp; Viva · TBD</option>
+      </select>
+    </div>
+
+    <div class="timeline">
+
+      <div class="timeline-item" id="m1">
+        <div class="timeline-date"><div class="timeline-month">May</div><div class="timeline-year">2024</div></div>
+        <div class="timeline-dot"><div class="timeline-dot-inner done"></div></div>
+        <div class="timeline-card">
+          <div class="timeline-card-header"><span class="timeline-card-title">Project Topic Assessment</span><span class="milestone-badge no-marks">No Marks</span></div>
+          <p>Initial topic assessment submitted with a brief overview of the proposed research, problem statement, objectives, and member task breakdown.</p>
+          <span class="milestone-status done-status">✓ Completed</span>
+        </div>
+      </div>
+
+      <div class="timeline-item" id="m2">
+        <div class="timeline-date"><div class="timeline-month">Jun</div><div class="timeline-year">2024</div></div>
+        <div class="timeline-dot"><div class="timeline-dot-inner done"></div></div>
+        <div class="timeline-card">
+          <div class="timeline-card-header"><span class="timeline-card-title">Project Charter Submission</span><span class="milestone-badge no-marks">No Marks</span></div>
+          <p>Project charter outlining scope, objectives, overall solution architecture, and member responsibilities for AcademiGuard.</p>
+          <span class="milestone-status done-status">✓ Completed</span>
+        </div>
+      </div>
+
+      <div class="timeline-item" id="m3">
+        <div class="timeline-date"><div class="timeline-month">Jul</div><div class="timeline-year">2024</div></div>
+        <div class="timeline-dot"><div class="timeline-dot-inner done"></div></div>
+        <div class="timeline-card">
+          <div class="timeline-card-header"><span class="timeline-card-title">Project Proposal Presentation</span><span class="milestone-badge marks">5%</span></div>
+          <p>Presented to a panel of judges — overview of AcademiGuard's proposed dual-engine architecture, methodology, and expected research contributions.</p>
+          <span class="milestone-status done-status">✓ Completed</span>
+        </div>
+      </div>
+
+      <div class="timeline-item" id="m4">
+        <div class="timeline-date"><div class="timeline-month">Aug</div><div class="timeline-year">2024</div></div>
+        <div class="timeline-dot"><div class="timeline-dot-inner done"></div></div>
+        <div class="timeline-card">
+          <div class="timeline-card-header"><span class="timeline-card-title">Project Proposal Report</span><span class="milestone-badge marks">7%</span></div>
+          <p>In-depth analysis report covering the research problem, literature review, proposed solution architecture, methodology, and expected contributions to EDM and LA.</p>
+          <span class="milestone-status done-status">✓ Completed</span>
+        </div>
+      </div>
+
+      <div class="timeline-item" id="m5">
+        <div class="timeline-date"><div class="timeline-month">Dec</div><div class="timeline-year">2024</div></div>
+        <div class="timeline-dot"><div class="timeline-dot-inner done"></div></div>
+        <div class="timeline-card">
+          <div class="timeline-card-header"><span class="timeline-card-title">Check List 1 Submission</span><span class="milestone-badge marks">1%</span></div>
+          <p>Document overviewing key Phase 1 implementation tasks completed by each team member — including the Hybrid Ensemble engine and initial dataset preprocessing.</p>
+          <span class="milestone-status done-status">✓ Completed</span>
+        </div>
+      </div>
+
+      <div class="timeline-item" id="m6">
+        <div class="timeline-date"><div class="timeline-month">Dec</div><div class="timeline-year">2024</div></div>
+        <div class="timeline-dot"><div class="timeline-dot-inner done"></div></div>
+        <div class="timeline-card">
+          <div class="timeline-card-header"><span class="timeline-card-title">Progress Presentation 1</span><span class="milestone-badge marks">15%</span></div>
+          <p>Evaluation of 50% project completion — demonstrating the Hybrid Ensemble engine achieving 97.8% accuracy and the early GRU prototype to the assessment panel.</p>
+          <span class="milestone-status done-status">✓ Completed</span>
+        </div>
+      </div>
+
+      <div class="timeline-item" id="m7">
+        <div class="timeline-date"><div class="timeline-month">Mar</div><div class="timeline-year">2025</div></div>
+        <div class="timeline-dot"><div class="timeline-dot-inner done"></div></div>
+        <div class="timeline-card">
+          <div class="timeline-card-header"><span class="timeline-card-title">IEEE Research Paper Draft</span><span class="milestone-badge marks">10%</span></div>
+          <p>IEEE-format paper submitted documenting the complete AcademiGuard platform, methodology, and experimental results (97.8% accuracy, 99.64% ROC-AUC).</p>
+          <span class="milestone-status done-status">✓ Completed</span>
+        </div>
+      </div>
+
+      <div class="timeline-item" id="m8">
+        <div class="timeline-date"><div class="timeline-month">Mar</div><div class="timeline-year">2025</div></div>
+        <div class="timeline-dot"><div class="timeline-dot-inner done"></div></div>
+        <div class="timeline-card">
+          <div class="timeline-card-header"><span class="timeline-card-title">Progress Presentation 2</span><span class="milestone-badge marks">18%</span></div>
+          <p>Evaluation of 90% project completion — full platform demonstration: GRU anomaly detection, RL interventions, SHAP visualizations, and LLaMA-powered messaging.</p>
+          <span class="milestone-status done-status">✓ Completed</span>
+        </div>
+      </div>
+
+      <div class="timeline-item" id="m9">
+        <div class="timeline-date"><div class="timeline-month">Jun</div><div class="timeline-year">2025</div></div>
+        <div class="timeline-dot"><div class="timeline-dot-inner pending"></div></div>
+        <div class="timeline-card">
+          <div class="timeline-card-header"><span class="timeline-card-title">Website Assessment</span><span class="milestone-badge marks">2%</span></div>
+          <p>Submission of the research project website showcasing all project components, team information, documents, milestones, and research outcomes.</p>
+          <span class="milestone-status pending-status">⏳ Pending</span>
+        </div>
+      </div>
+
+      <div class="timeline-item" id="m10">
+        <div class="timeline-date"><div class="timeline-month">Aug</div><div class="timeline-year">2025</div></div>
+        <div class="timeline-dot"><div class="timeline-dot-inner pending"></div></div>
+        <div class="timeline-card">
+          <div class="timeline-card-header"><span class="timeline-card-title">Final Report Submission</span><span class="milestone-badge marks">19%</span></div>
+          <p>Submission of individual and group final reports covering the complete AcademiGuard research, implementation, experimental evaluation, and conclusions.</p>
+          <span class="milestone-status pending-status">⏳ Pending</span>
+        </div>
+      </div>
+
+      <div class="timeline-item" id="m11">
+        <div class="timeline-date"><div class="timeline-month">TBD</div><div class="timeline-year">2025</div></div>
+        <div class="timeline-dot"><div class="timeline-dot-inner pending"></div></div>
+        <div class="timeline-card">
+          <div class="timeline-card-header"><span class="timeline-card-title">Final Assessment &amp; Viva</span><span class="milestone-badge marks">TBD%</span></div>
+          <p>Final project evaluation and viva examination — demonstrating the complete AcademiGuard platform and defending research contributions before the assessment panel.</p>
+          <span class="milestone-status pending-status">⏳ Pending</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DOCUMENTS -->
+<section id="documents">
+  <div class="section-inner">
+    <span class="section-tag">Documents</span>
+    <h2 class="section-title">Project Documents</h2>
+    <p class="section-sub">All submitted and pending project documents. Click to view or download.</p>
+
+    <div class="doc-grid">
+      <a href="#" class="doc-card">
+        <div class="doc-card-top"><div class="doc-icon">📄</div><span class="doc-status submitted-badge">Submitted</span></div>
+        <div class="doc-info"><h4>Project Charter</h4><span>Group Document · Jun 2024</span></div>
+        <div class="doc-footer"><span class="doc-type-tag">GROUP</span><span class="doc-arrow">View →</span></div>
+      </a>
+      <a href="#" class="doc-card">
+        <div class="doc-card-top"><div class="doc-icon">📋</div><span class="doc-status submitted-badge">Submitted</span></div>
+        <div class="doc-info"><h4>Proposal Document</h4><span>Group Document · Aug 2024</span></div>
+        <div class="doc-footer"><span class="doc-type-tag">GROUP</span><span class="doc-arrow">View →</span></div>
+      </a>
+      <a href="#" class="doc-card">
+        <div class="doc-card-top"><div class="doc-icon">✅</div><span class="doc-status submitted-badge">Submitted</span></div>
+        <div class="doc-info"><h4>Check List 1</h4><span>Group Document · Dec 2024</span></div>
+        <div class="doc-footer"><span class="doc-type-tag">GROUP</span><span class="doc-arrow">View →</span></div>
+      </a>
+      <a href="#" class="doc-card">
+        <div class="doc-card-top"><div class="doc-icon">📰</div><span class="doc-status submitted-badge">Submitted</span></div>
+        <div class="doc-info"><h4>IEEE Research Paper</h4><span>Draft · Mar 2025</span></div>
+        <div class="doc-footer"><span class="doc-type-tag">IEEE</span><span class="doc-arrow">View →</span></div>
+      </a>
+      <a href="#" class="doc-card doc-pending">
+        <div class="doc-card-top"><div class="doc-icon">📘</div><span class="doc-status pending-badge">Pending</span></div>
+        <div class="doc-info"><h4>Final Report — Group</h4><span>Group Document · Aug 2025</span></div>
+        <div class="doc-footer"><span class="doc-type-tag">GROUP</span><span class="doc-arrow muted">Coming Soon</span></div>
+      </a>
+      <a href="#" class="doc-card doc-pending">
+        <div class="doc-card-top"><div class="doc-icon">📗</div><span class="doc-status pending-badge">Pending</span></div>
+        <div class="doc-info"><h4>Final Report — Ravisanka U.V.P</h4><span>Individual · Aug 2025</span></div>
+        <div class="doc-footer"><span class="doc-type-tag">INDIVIDUAL</span><span class="doc-arrow muted">Coming Soon</span></div>
+      </a>
+      <a href="#" class="doc-card doc-pending">
+        <div class="doc-card-top"><div class="doc-icon">📗</div><span class="doc-status pending-badge">Pending</span></div>
+        <div class="doc-info"><h4>Final Report — Perera I.A.T.D</h4><span>Individual · Aug 2025</span></div>
+        <div class="doc-footer"><span class="doc-type-tag">INDIVIDUAL</span><span class="doc-arrow muted">Coming Soon</span></div>
+      </a>
+      <a href="#" class="doc-card doc-pending">
+        <div class="doc-card-top"><div class="doc-icon">📗</div><span class="doc-status pending-badge">Pending</span></div>
+        <div class="doc-info"><h4>Final Report — Disanayaka S.T</h4><span>Individual · Aug 2025</span></div>
+        <div class="doc-footer"><span class="doc-type-tag">INDIVIDUAL</span><span class="doc-arrow muted">Coming Soon</span></div>
+      </a>
+      <a href="#" class="doc-card doc-pending">
+        <div class="doc-card-top"><div class="doc-icon">📗</div><span class="doc-status pending-badge">Pending</span></div>
+        <div class="doc-info"><h4>Final Report — Nimanji D.L.K</h4><span>Individual · Aug 2025</span></div>
+        <div class="doc-footer"><span class="doc-type-tag">INDIVIDUAL</span><span class="doc-arrow muted">Coming Soon</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PRESENTATIONS -->
+<section id="presentations">
+  <div class="section-inner">
+    <span class="section-tag">Presentations</span>
+    <h2 class="section-title">Slides &amp; Presentations</h2>
+    <p class="section-sub">Presentation slides from past assessments and future milestones.</p>
+    <div class="slides-grid">
+      <a href="#" class="slide-card">
+        <div class="slide-preview blue-grad">
+          <div class="slide-preview-content"><span class="slide-abbr">PP</span><span class="slide-label-text">Proposal</span></div>
+          <span class="slide-badge">5% · Jul 2024</span>
+        </div>
+        <div class="slide-info">
+          <h4>Proposal Presentation</h4>
+          <p>Initial project proposal — AcademiGuard problem statement, proposed architecture overview, and expected contributions.</p>
+          <div class="slide-btn">View Slides →</div>
+        </div>
+      </a>
+      <a href="#" class="slide-card">
+        <div class="slide-preview purple-grad">
+          <div class="slide-preview-content"><span class="slide-abbr">PP1</span><span class="slide-label-text">Progress 1</span></div>
+          <span class="slide-badge">15% · Dec 2024</span>
+        </div>
+        <div class="slide-info">
+          <h4>Progress Presentation 1</h4>
+          <p>50% completion — Hybrid Ensemble engine demo achieving 97.8% accuracy and early GRU prototype.</p>
+          <div class="slide-btn">View Slides →</div>
+        </div>
+      </a>
+      <a href="#" class="slide-card">
+        <div class="slide-preview teal-grad">
+          <div class="slide-preview-content"><span class="slide-abbr">PP2</span><span class="slide-label-text">Progress 2</span></div>
+          <span class="slide-badge">18% · Mar 2025</span>
+        </div>
+        <div class="slide-info">
+          <h4>Progress Presentation 2</h4>
+          <p>90% completion — full platform demo: GRU detection, RL interventions, SHAP visualizations, LLaMA messaging.</p>
+          <div class="slide-btn">View Slides →</div>
+        </div>
+      </a>
+      <a href="#" class="slide-card slide-pending">
+        <div class="slide-preview dark-grad">
+          <div class="slide-preview-content"><span class="slide-abbr">FP</span><span class="slide-label-text">Final</span></div>
+          <span class="slide-badge pending-tag">Pending</span>
+        </div>
+        <div class="slide-info">
+          <h4>Final Presentation</h4>
+          <p>Complete AcademiGuard platform demonstration and research defense before the assessment panel.</p>
+          <div class="slide-btn slide-btn-disabled">Not Yet Available</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <span class="section-tag">About Us</span>
+    <h2 class="section-title">Meet the Team</h2>
+    <p class="section-sub">Information Technology undergraduates at SLIIT, dedicated to making AI-driven academic support transparent, proactive, and trustworthy.</p>
+
+    <div class="supervisors-row">
+      <div class="team-card supervisor-card">
+        <div class="team-avatar sup-avatar">SC</div>
+        <div class="team-role-badge sup-badge">Supervisor</div>
+        <div class="team-name">Sanjeevi Chandrasiri</div>
+        <div class="team-id">Dept. of Information Technology, SLIIT</div>
+        <a href="mailto:sanji.c@sliit.lk" class="team-email">sanji.c@sliit.lk</a>
+      </div>
+      <div class="team-card supervisor-card">
+        <div class="team-avatar sup-avatar">IW</div>
+        <div class="team-role-badge sup-badge">Co-Supervisor</div>
+        <div class="team-name">Ishara Weerathunga</div>
+        <div class="team-id">Dept. of Information Technology, SLIIT</div>
+        <a href="mailto:ishara.w@sliit.lk" class="team-email">ishara.w@sliit.lk</a>
+      </div>
+    </div>
+
+    <div class="members-label">Research Group Members</div>
+    <div class="members-grid">
+      <div class="team-card member-card">
+        <div class="team-avatar mem-avatar">RU</div>
+        <div class="team-role-badge mem-badge">Team Leader</div>
+        <div class="team-name">Ravisanka U.V.P</div>
+        <div class="team-id">IT22354792</div>
+        <a href="mailto:it22354792@my.sliit.lk" class="team-email">it22354792@my.sliit.lk</a>
+      </div>
+      <div class="team-card member-card">
+        <div class="team-avatar mem-avatar">PI</div>
+        <div class="team-role-badge mem-badge">Team Member</div>
+        <div class="team-name">Perera I.A.T.D</div>
+        <div class="team-id">IT22902702</div>
+        <a href="mailto:it22902702@my.sliit.lk" class="team-email">it22902702@my.sliit.lk</a>
+      </div>
+      <div class="team-card member-card">
+        <div class="team-avatar mem-avatar">DS</div>
+        <div class="team-role-badge mem-badge">Team Member</div>
+        <div class="team-name">Disanayaka S.T</div>
+        <div class="team-id">IT22370228</div>
+        <a href="mailto:it22370228@my.sliit.lk" class="team-email">it22370228@my.sliit.lk</a>
+      </div>
+      <div class="team-card member-card">
+        <div class="team-avatar mem-avatar">ND</div>
+        <div class="team-role-badge mem-badge">Team Member</div>
+        <div class="team-name">Nimanji D.L.K</div>
+        <div class="team-id">IT22365750</div>
+        <a href="mailto:it22365750@my.sliit.lk" class="team-email">it22365750@my.sliit.lk</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-inner">
+      <div class="contact-left">
+        <span class="section-tag contact-tag">Contact</span>
+        <h2 class="section-title contact-title">Get in Touch</h2>
+        <p class="section-sub contact-sub">Have questions about AcademiGuard? Reach out to our team or supervisors for collaboration or further information.</p>
+        <div class="contact-info-list">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">🏫</div>
+            <div class="contact-info-text"><h4>Institution</h4><p>Sri Lanka Institute of Information Technology (SLIIT), Malabe, Sri Lanka</p></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">📧</div>
+            <div class="contact-info-text"><h4>Supervisor</h4><p>sanji.c@sliit.lk</p></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">📧</div>
+            <div class="contact-info-text"><h4>Co-Supervisor</h4><p>ishara.w@sliit.lk</p></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">🏛️</div>
+            <div class="contact-info-text"><h4>Department</h4><p>Department of Information Technology</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3 class="form-title">Send a Message</h3>
+        <div class="form-row">
+          <div class="form-group"><label>Your Name</label><input type="text" placeholder="Enter your name" id="form-name" /></div>
+          <div class="form-group"><label>Email Address</label><input type="email" placeholder="your@email.com" id="form-email" /></div>
+        </div>
+        <div class="form-group"><label>Subject</label><input type="text" placeholder="What's this about?" id="form-subject" /></div>
+        <div class="form-group"><label>Message</label><textarea placeholder="Write your message here..." id="form-message"></textarea></div>
+        <button class="btn-submit" onclick="handleSubmit()">Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo-row"><div class="logo-icon">AG</div><span class="footer-name">AcademiGuard</span></div>
+      <p>Adaptive &amp; Explainable AI for Personalized Academic Interventions</p>
+    </div>
+    <div class="footer-links">
+      <a href="#home">Home</a><a href="#domain">Domain</a><a href="#milestones">Milestones</a>
+      <a href="#documents">Documents</a><a href="#presentations">Slides</a>
+      <a href="#about">About</a><a href="#contact">Contact</a>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 AcademiGuard &nbsp;·&nbsp; Dept. of Information Technology, SLIIT &nbsp;·&nbsp; CDAP Research Project</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll progress
+window.addEventListener('scroll', () => {
+  const total = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('scroll-progress').style.width = (window.scrollY / total * 100) + '%';
+  const btt = document.getElementById('back-to-top');
+  btt.style.opacity = window.scrollY > 400 ? '1' : '0';
+  btt.style.pointerEvents = window.scrollY > 400 ? 'auto' : 'none';
+  document.getElementById('navbar').style.background =
+    window.scrollY > 20 ? 'rgba(10,22,40,0.98)' : 'rgba(10,22,40,0.85)';
+});
+
+// Nav toggle
+function toggleNav() {
+  document.getElementById('navLinks').classList.toggle('open');
+  document.getElementById('hamburger').classList.toggle('active');
+}
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('active');
+  });
+});
+
+// Active nav
+const navObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      document.querySelectorAll('.nav-link').forEach(a => a.classList.remove('active-link'));
+      const a = document.querySelector(`.nav-link[href="#${e.target.id}"]`);
+      if (a) a.classList.add('active-link');
+    }
+  });
+}, { threshold: 0.35 });
+document.querySelectorAll('section[id]').forEach(s => navObs.observe(s));
+
+// Animated counters
+function animateCounter(el, target, suffix) {
+  let current = 0;
+  const steps = 60;
+  const inc = target / steps;
+  const timer = setInterval(() => {
+    current = Math.min(current + inc, target);
+    const disp = Number.isInteger(target) ? Math.floor(current) : current.toFixed(2);
+    el.querySelector('span').textContent = disp + suffix;
+    if (current >= target) clearInterval(timer);
+  }, 25);
+}
+const cntObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting && !e.target.dataset.counted) {
+      e.target.dataset.counted = '1';
+      animateCounter(e.target, parseFloat(e.target.dataset.target), e.target.dataset.suffix || '');
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.stat-number[data-target]').forEach(el => cntObs.observe(el));
+
+// Typing effect
+const phrases = ['Personalized Academic Interventions','Proactive Student Monitoring','Learning Analytics & XAI','Early Disengagement Detection'];
+let pIdx = 0, cIdx = 0, del = false;
+const typedEl = document.getElementById('typed-text');
+function type() {
+  const p = phrases[pIdx];
+  typedEl.textContent = del ? p.substring(0, --cIdx) : p.substring(0, ++cIdx);
+  if (!del && cIdx === p.length) { del = true; setTimeout(type, 2000); return; }
+  if (del && cIdx === 0) { del = false; pIdx = (pIdx + 1) % phrases.length; }
+  setTimeout(type, del ? 50 : 85);
+}
+setTimeout(type, 800);
+
+// Domain tabs
+function switchTab(btn, id) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-' + id).classList.add('active');
+}
+
+// Milestone jump
+function jumpToMilestone(id) {
+  if (!id) return;
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  const card = el.querySelector('.timeline-card');
+  card.classList.add('highlight-pulse');
+  setTimeout(() => card.classList.remove('highlight-pulse'), 1600);
+  setTimeout(() => { document.getElementById('milestoneSelect').value = ''; }, 2200);
+}
+
+// Fade-in
+const fadeObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); fadeObs.unobserve(e.target); }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.feature-card,.domain-card,.timeline-card,.doc-card,.slide-card,.team-card,.tab-panel-inner').forEach(el => {
+  el.classList.add('fade-up');
+  fadeObs.observe(el);
+});
+
+// Contact form
+function handleSubmit() {
+  const btn = document.querySelector('.btn-submit');
+  const name = document.getElementById('form-name').value.trim();
+  const email = document.getElementById('form-email').value.trim();
+  const msg = document.getElementById('form-message').value.trim();
+  if (!name || !email || !msg) {
+    btn.textContent = '⚠ Please fill all required fields';
+    btn.style.background = 'linear-gradient(135deg,#DC2626,#B91C1C)';
+    setTimeout(() => { btn.textContent = 'Send Message'; btn.style.background = ''; }, 2500);
+    return;
+  }
+  btn.textContent = '✓ Message Sent!';
+  btn.style.background = 'linear-gradient(135deg,#0D9488,#0891B2)';
+  setTimeout(() => { btn.textContent = 'Send Message'; btn.style.background = ''; }, 3000);
+}
+</script>
+</body>
+</html>
