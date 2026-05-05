@@ -1547,6 +1547,27 @@
         }, 2200);
       }
 
+      // Auto-highlight milestones that fall on today's date
+      (function () {
+        const d = new Date();
+        const dd = String(d.getDate()).padStart(2, "0");
+        const mmm = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][d.getMonth()];
+        const yyyy = d.getFullYear();
+        const todayStr = `${dd} ${mmm} ${yyyy}`;
+
+        document.querySelectorAll(".milestone-status.pending-status").forEach((el) => {
+          if (!el.textContent.includes(todayStr)) return;
+          el.classList.replace("pending-status", "today-status");
+          el.innerHTML = `&#128197; Today &nbsp;&middot;&nbsp; ${todayStr}`;
+          const item = el.closest(".timeline-item");
+          if (!item) return;
+          const dot = item.querySelector(".timeline-dot-inner");
+          if (dot) { dot.classList.replace("pending", "today"); }
+          const card = item.querySelector(".timeline-card");
+          if (card) { card.classList.add("today-card"); }
+        });
+      })();
+
       // Fade-in
       const fadeObs = new IntersectionObserver(
         (entries) => {

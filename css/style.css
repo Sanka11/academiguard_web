@@ -1447,6 +1447,30 @@ section {
 .pending-status {
   color: #fbbf24;
 }
+.today-status {
+  color: #fb923c;
+  font-weight: 700;
+}
+
+.timeline-dot-inner.today {
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  box-shadow:
+    0 0 14px rgba(245, 158, 11, 0.65),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  animation: todayDotPulse 2s ease-in-out infinite;
+}
+.timeline-card.today-card {
+  border-color: rgba(245, 158, 11, 0.45);
+  box-shadow:
+    0 0 0 1px rgba(245, 158, 11, 0.2),
+    0 2px 12px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+@keyframes todayDotPulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(245, 158, 11, 0.5), inset 0 1px 0 rgba(255,255,255,0.2); }
+  50%       { box-shadow: 0 0 18px rgba(245, 158, 11, 0.9), inset 0 1px 0 rgba(255,255,255,0.2); }
+}
 
 /* Highlight pulse animation */
 @keyframes highlightPulse {
